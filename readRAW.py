@@ -10,6 +10,8 @@ import tkinter as tk
 from tkinter import filedialog  
 ##import numpy as np
 import math
+import matplotlib.pyplot as plt
+
 '''  
 root = tk.Tk()                #windows適用        
 root.withdraw()             # we don't want a full GUI, so keep the root window from appearing
@@ -78,6 +80,23 @@ for i in range(0, len(Raw_Data), len(channel)*2):
     for j in range(len(channel)):
         Data[channel[j]].append(Raw_Data[i + 2*j+1]*256+Raw_Data[i + 2*j])
     
+data = []
+data1 = []
+for i in Data[0]:      #數值校正
+    j = i/65535*1.8/2000
+    data.append(j)
+for i in Data[1]:      #數值校正
+    j = i/65535*1.8/2000
+    data1.append(j)
+
+plt.subplot(2,1,1)
+plt.plot(data, 'k')
+plt.xlabel('Point(CH1)')
+plt.ylabel('Volts')
+plt.subplot(2,1,2)
+plt.plot(data1, 'k')
+plt.xlabel('Point(CH2)')
+plt.ylabel('Volts')
 
 
 #with open (fname,'r', errors='ignore') as f:
