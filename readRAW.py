@@ -27,7 +27,7 @@ fname = filedialog.askopenfilename(title = u'選擇文件',
 '''
 #%% Open RAW file in python
 
-Raw_Data = open(, "rb").read()
+Raw_Data = open(fname, "rb").read()
 
 RAW = []
 for s in Raw_Data:
