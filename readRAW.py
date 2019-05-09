@@ -12,8 +12,9 @@ from tkinter import filedialog
 import math
 import matplotlib.pyplot as plt
 
+#%%windows適用
 '''  
-root = tk.Tk()                #windows適用        
+root = tk.Tk()                        
 root.withdraw()             # we don't want a full GUI, so keep the root window from appearing
  
 default_dir = r"D:\Python"  # Setting default Folder
@@ -25,6 +26,10 @@ fname = filedialog.askopenfilename(title = u'選擇文件',
 #print(fname)
 #print (filedialog.askdirectory())  # 返回目录路径
 '''
+
+#%%Mac適用
+fname = 'Datapath'   #取raw檔路徑
+
 #%% Open RAW file in python
 
 Raw_Data = open(fname, "rb").read()
