@@ -48,7 +48,15 @@ class dataDecode:
                     
         
     def rawdataDecode(rawtxt):
-    
+        '''
+        input:
+            -rawtxt: a list in binary read from kylab raw file format
+        output:
+            -Data: a list with channel recorded by kylab sensor
+            -SR_array: a list with sampling rate of each channel
+            -timestr: file established time, not available for TD1/3, rat & mice sensor
+            if use TD1/3, rat & mice sensor, you can read file established time by datetime.fromtimestamp(os.path.getmtime(filename+'.RAW')) command
+        '''
         Raw_Data = rawtxt
 
         
